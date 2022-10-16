@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <body style="margin : 0px; overflow: hidden;">
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+<body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
         <a-assets>
             <!-- 3Dオブジェクトを設定 -->
+            <a-asset-item id="gl-obj" src="./assets/mm_project_magician.glb"></a-asset-item>
             <a-asset-item id="nenga-obj" src="./assets/halloween_pumpkin.obj"></a-asset-item>
             <a-asset-item id="nenga-mtl" src="./assets/halloween_pumpkin.mtl"></a-asset-item>
         </a-assets>
         <a-marker preset="hiro">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-            <a-obj-model src="#nenga-obj" mtl="#nenga-mtl" scale=".1 .1 .1"></a-obj-model>
+            <!-- <a-obj-model src="#nenga-obj" mtl="#nenga-mtl" scale=".1 .1 .1"></a-obj-model> -->
+            <a-entity gltf-model="#gl-obj" scale="0.01 0.01 0.01"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
-    </body>
+</body>
+
 </html>
