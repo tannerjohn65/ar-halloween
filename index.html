@@ -4,12 +4,12 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
+        <a-scene embedded arjs>
             <a-assets>
-              <a-asset-item id="pumpkin-obj" src="halloween_pumpkin.obj"></a-asset-item>
-              <a-asset-item id="pumpkin-mtl" src="halloween_pumpkin.mtl"></a-asset-item>
+              <a-asset-item id="pumpkin-obj" src="./aseets/halloween_pumpkin.obj"></a-asset-item>
+              <a-asset-item id="pumpkin-mtl" src="./aseets/halloween_pumpkin.mtl"></a-asset-item>
             </a-assets>
-            <a-marker type='pattern' url='./pattern-marker.patt'>
+            <a-marker type='pattern' url='./assets/pattern-marker.patt'>
               <a-obj-model src="#pumpkin-obj" mtl="#pumpkin-mtl" scale=".1 .1 .1"></a-obj-model>
             </a-marker>
             <a-entity camera></a-entity>
