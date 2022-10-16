@@ -5,14 +5,15 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-        </a-marker>
         <a-assets>
             <!-- 3Dオブジェクトを設定 -->
             <a-asset-item id="nenga-obj" src="./assets/halloween_pumpkin.obj"></a-asset-item>
             <a-asset-item id="nenga-mtl" src="./assets/halloween_pumpkin.mtl"></a-asset-item>
         </a-assets>
+        <a-marker preset="hiro">
+            <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+            <a-obj-model src="#nenga-obj" mtl="#nenga-mtl" scale=".1 .1 .1"></a-obj-model>
+        </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
     </body>
